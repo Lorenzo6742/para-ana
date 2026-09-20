@@ -252,7 +252,22 @@
     to {
         transform: translateY(-110vh) rotate(360deg);
         opacity: 0;
-    }
+    } /* MODO SURPRESA 🌙 */
+
+body.surpresa {
+    background: #12091f;
+    color: white;
+    transition: background 1s, color 1s;
+}
+
+body.surpresa .inicio {
+    background: linear-gradient(135deg, #12091f, #2b123d);
+}
+
+body.surpresa h1,
+body.surpresa .subtitulo {
+    color: white;
+}
 } </style>
 </head>
 
