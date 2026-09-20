@@ -1,1 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Para Ana ❤️</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ffd6e7, #fff5f8);
+            color: #5a2639;
+            min-height: 100vh;
+        }
+
+        .inicio {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .coracao {
+            font-size: 80px;
+            animation: pulsar 1.5s infinite;
+        }
+
+        h1 {
+            font-size: 48px;
+            margin: 20px 0;
+        }
+
+        .subtitulo {
+            font-size: 21px;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+
+        .botao {
+            margin-top: 30px;
+            padding: 16px 35px;
+            border: none;
+            border-radius: 30px;
+            background: #e75480;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .botao:hover {
+            transform: scale(1.08);
+        }
+
+        .conteudo {
+            display: none;
+            padding: 60px 20px;
+        }
+
+        .secao {
+            max-width: 900px;
+            margin: 0 auto 70px;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 32px;
+            margin-bottom: 25px;
+        }
+
+        .carta {
+            background: white;
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            font-size: 18px;
+            line-height: 1.8;
+            text-align: left;
+        }
+
+        .musica {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .final {
+            text-align: center;
+            font-size: 25px;
+            padding: 50px 20px;
+        }
+
+        @keyframes pulsar {
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.15);
+            }
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 36px;
+            }
+
+            h2 {
+                font-size: 27px;
+            }
+
+            .subtitulo {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="inicio" id="inicio">
+
+        <div class="coracao">❤️</div>
+
+        <h1>Para Ana</h1>
+
+        <p class="subtitulo">
+            Uma pequena parte do meu amor por você.
+        </p>
+
+        <button class="botao" onclick="abrirSite()">
+            Entrar 💌
+        </button>
+
+    </section>
+
+
+    <main class="conteudo" id="conteudo">
+
+        <section class="secao">
+
+            <h2>📸 Nossos momentos</h2>
+
+            <p>
+                Aqui vamos colocar nossas fotos e
+                guardar alguns dos momentos mais
+                especiais da nossa história. ❤️
+            </p>
+
+        </section>
+
+
+        <section class="secao">
+
+            <h2>💌 Uma carta para você</h2>
+
+            <div class="carta">
+
+                <p>
+                    Meu amor,
+                </p>
+
+                <br>
+
+                <p>
+                    Eu fiz esse pequeno cantinho da internet
+                    especialmente para você.
+                </p>
+
+                <br>
+
+                <p>
+                    Quero guardar aqui algumas das nossas
+                    lembranças, nossas fotos, nossas músicas
+                    e algumas palavras que às vezes são
+                    difíceis de dizer pessoalmente.
+                </p>
+
+                <br>
+
+                <p>
+                    Espero que, sempre que você entrar aqui,
+                    consiga sentir um pouquinho do amor que
+                    eu sinto por você.
+                </p>
+
+                <br>
+
+                <p>
+                    Eu escolheria você em todas as vidas. ❤️
+                </p>
+
+                <br>
+
+                <p>
+                    Com amor,<br>
+                    Lorenzo.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <section class="secao">
+
+            <h2>🎵 Nossa música</h2>
+
+            <div class="musica">
+
+                <p>
+                    Nossa música vai ficar aqui. ❤️
+                </p>
+
+                <br>
+
+                <p>
+                    Em breve vamos colocar a música de vocês
+                    nessa parte.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <div class="final">
+
+            ❤️
+
+            <br><br>
+
+            Eu escolheria você<br>
+            em todas as vidas.
+
+        </div>
+
+    </main>
+
+
+    <script>
+
+        function abrirSite() {
+
+            document.getElementById("inicio").style.display = "none";
+
+            document.getElementById("conteudo").style.display = "block";
+
+            window.scrollTo(0, 0);
+
+        }
+
+    </script>
+
+</body>
+
+</html>
