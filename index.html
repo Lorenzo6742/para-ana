@@ -228,7 +228,32 @@
                 padding: 30px 25px;
             }
         }
-    </style>
+   #coracoes {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 999;
+}
+
+.coracao-animado {
+    position: absolute;
+    bottom: -50px;
+    font-size: 25px;
+    animation: subirCoracao 5s linear forwards;
+}
+
+@keyframes subirCoracao {
+    from {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+} </style>
 </head>
 
 
@@ -516,8 +541,25 @@ function atualizarContador() {
 
 setInterval(atualizarContador, 1000);
 atualizarContador();
-    </script>
+   function criarCoracao() {
+    const coracao = document.createElement("div");
 
+    coracao.classList.add("coracao-animado");
+    coracao.innerHTML = "❤️";
+
+    coracao.style.left = Math.random() * 100 + "vw";
+    coracao.style.fontSize = (15 + Math.random() * 25) + "px";
+    coracao.style.animationDuration = (4 + Math.random() * 3) + "s";
+
+    document.getElementById("coracoes").appendChild(coracao);
+
+    setTimeout(() => {
+        coracao.remove();
+    }, 7000);
+}
+
+setInterval(criarCoracao, 500); </script>
+<div id="coracoes"></div>
 </body>
 
 </html>
