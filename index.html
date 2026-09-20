@@ -18,11 +18,10 @@
             font-family: Arial, sans-serif;
             background: linear-gradient(135deg, #ffd6e7, #fff5f8);
             color: #5a2639;
-            min-height: 100vh;
         }
 
         .inicio {
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -37,12 +36,12 @@
         }
 
         h1 {
-            font-size: 48px;
+            font-size: 50px;
             margin: 20px 0;
         }
 
         .subtitulo {
-            font-size: 21px;
+            font-size: 20px;
             max-width: 600px;
             line-height: 1.6;
         }
@@ -56,10 +55,12 @@
             color: white;
             font-size: 18px;
             cursor: pointer;
+            transition: 0.3s;
         }
 
         .botao:hover {
             transform: scale(1.08);
+            background: #d63d6b;
         }
 
         .conteudo {
@@ -75,30 +76,120 @@
 
         h2 {
             font-size: 32px;
+            margin-bottom: 30px;
+        }
+
+        .introducao {
+            font-size: 19px;
+            line-height: 1.7;
+        }
+
+        /* CARTAS */
+
+        .cartas {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .carta-botao {
+            background: white;
+            border: none;
+            border-radius: 20px;
+            padding: 30px 20px;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.10);
+            transition: 0.3s;
+            color: #5a2639;
+        }
+
+        .carta-botao:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+
+        .carta-botao .icone {
+            font-size: 45px;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .carta-botao h3 {
+            font-size: 19px;
+            margin-bottom: 10px;
+        }
+
+        .carta-botao p {
+            font-size: 14px;
+        }
+
+        /* MODAL */
+
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(70, 20, 40, 0.65);
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            z-index: 1000;
+        }
+
+        .modal-conteudo {
+            background: #fffafa;
+            max-width: 600px;
+            width: 100%;
+            padding: 40px;
+            border-radius: 25px;
+            text-align: left;
+            position: relative;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+            animation: aparecer 0.3s ease;
+        }
+
+        .fechar {
+            position: absolute;
+            right: 20px;
+            top: 15px;
+            border: none;
+            background: none;
+            font-size: 28px;
+            cursor: pointer;
+            color: #8b3a55;
+        }
+
+        .modal-conteudo h2 {
+            text-align: center;
+            font-size: 28px;
             margin-bottom: 25px;
         }
 
-        .carta {
-            background: white;
-            padding: 35px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        .modal-conteudo p {
             font-size: 18px;
             line-height: 1.8;
-            text-align: left;
         }
+
+        /* MÚSICA */
 
         .musica {
             background: white;
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            padding: 35px;
+            border-radius: 25px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.10);
         }
+
+        .disco {
+            font-size: 65px;
+            margin-bottom: 15px;
+        }
+
+        /* FINAL */
 
         .final {
             text-align: center;
             font-size: 25px;
-            padding: 50px 20px;
+            padding: 40px 20px 80px;
         }
 
         @keyframes pulsar {
@@ -111,23 +202,39 @@
             }
         }
 
-        @media (max-width: 600px) {
+        @keyframes aparecer {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 700px) {
+
             h1 {
-                font-size: 36px;
+                font-size: 38px;
             }
 
-            h2 {
-                font-size: 27px;
+            .cartas {
+                grid-template-columns: 1fr;
             }
 
-            .subtitulo {
-                font-size: 18px;
+            .modal-conteudo {
+                padding: 30px 25px;
             }
         }
     </style>
 </head>
 
+
 <body>
+
+    <!-- TELA INICIAL -->
 
     <section class="inicio" id="inicio">
 
@@ -146,72 +253,71 @@
     </section>
 
 
+    <!-- CONTEÚDO -->
+
     <main class="conteudo" id="conteudo">
 
         <section class="secao">
 
-            <h2>📸 Nossos momentos</h2>
+            <h2>❤️ Bem-vinda ao nosso cantinho</h2>
 
-            <p>
-                Aqui vamos colocar nossas fotos e
-                guardar alguns dos momentos mais
-                especiais da nossa história. ❤️
+            <p class="introducao">
+                Eu fiz esse pequeno espaço especialmente para você.
+                <br><br>
+                Aqui vamos guardar nossas lembranças,
+                nossas fotos, nossas músicas e algumas
+                coisas que quero dizer para você.
             </p>
 
         </section>
 
 
+        <!-- CARTAS -->
+
         <section class="secao">
 
-            <h2>💌 Uma carta para você</h2>
+            <h2>💌 Cartas para você</h2>
 
-            <div class="carta">
+            <div class="cartas">
 
-                <p>
-                    Meu amor,
-                </p>
+                <button class="carta-botao" onclick="abrirCarta('saudade')">
 
-                <br>
+                    <span class="icone">💌</span>
 
-                <p>
-                    Eu fiz esse pequeno cantinho da internet
-                    especialmente para você.
-                </p>
+                    <h3>Quando estiver com saudade</h3>
 
-                <br>
+                    <p>Clique para abrir</p>
 
-                <p>
-                    Quero guardar aqui algumas das nossas
-                    lembranças, nossas fotos, nossas músicas
-                    e algumas palavras que às vezes são
-                    difíceis de dizer pessoalmente.
-                </p>
+                </button>
 
-                <br>
 
-                <p>
-                    Espero que, sempre que você entrar aqui,
-                    consiga sentir um pouquinho do amor que
-                    eu sinto por você.
-                </p>
+                <button class="carta-botao" onclick="abrirCarta('triste')">
 
-                <br>
+                    <span class="icone">💗</span>
 
-                <p>
-                    Eu escolheria você em todas as vidas. ❤️
-                </p>
+                    <h3>Quando estiver triste</h3>
 
-                <br>
+                    <p>Clique para abrir</p>
 
-                <p>
-                    Com amor,<br>
-                    Lorenzo.
-                </p>
+                </button>
+
+
+                <button class="carta-botao" onclick="abrirCarta('amor')">
+
+                    <span class="icone">❤️</span>
+
+                    <h3>Uma carta para você</h3>
+
+                    <p>Clique para abrir</p>
+
+                </button>
 
             </div>
 
         </section>
 
+
+        <!-- MÚSICA -->
 
         <section class="secao">
 
@@ -219,18 +325,33 @@
 
             <div class="musica">
 
-                <p>
-                    Nossa música vai ficar aqui. ❤️
-                </p>
+                <div class="disco">🎵</div>
+
+                <h3>Nossa música vai ficar aqui</h3>
 
                 <br>
 
                 <p>
-                    Em breve vamos colocar a música de vocês
-                    nessa parte.
+                    Em breve vamos colocar a música
+                    especial de vocês aqui. ❤️
                 </p>
 
             </div>
+
+        </section>
+
+
+        <!-- FOTOS -->
+
+        <section class="secao">
+
+            <h2>📸 Nossos momentos</h2>
+
+            <p class="introducao">
+                Nossa galeria de fotos vai ficar aqui.
+                <br><br>
+                Vamos colocar as fotos por último, como combinado. ❤️
+            </p>
 
         </section>
 
@@ -249,6 +370,25 @@
     </main>
 
 
+    <!-- JANELA DAS CARTAS -->
+
+    <div class="modal" id="modal">
+
+        <div class="modal-conteudo">
+
+            <button class="fechar" onclick="fecharCarta()">
+                ×
+            </button>
+
+            <h2 id="tituloCarta"></h2>
+
+            <p id="textoCarta"></p>
+
+        </div>
+
+    </div>
+
+
     <script>
 
         function abrirSite() {
@@ -258,6 +398,81 @@
             document.getElementById("conteudo").style.display = "block";
 
             window.scrollTo(0, 0);
+
+        }
+
+
+        function abrirCarta(tipo) {
+
+            const modal = document.getElementById("modal");
+
+            const titulo = document.getElementById("tituloCarta");
+
+            const texto = document.getElementById("textoCarta");
+
+
+            if (tipo === "saudade") {
+
+                titulo.innerHTML = "💌 Quando estiver com saudade";
+
+                texto.innerHTML =
+                    "Se você está lendo isso, provavelmente está com saudade de mim. " +
+                    "Então lembra que, mesmo quando estamos longe, " +
+                    "você continua sendo uma das partes mais importantes da minha vida. " +
+                    "Eu também sinto sua falta. ❤️";
+
+            }
+
+
+            if (tipo === "triste") {
+
+                titulo.innerHTML = "💗 Quando estiver triste";
+
+                texto.innerHTML =
+                    "Se hoje não foi um dia bom, quero que você lembre de uma coisa: " +
+                    "você não precisa enfrentar tudo sozinha. " +
+                    "Eu estou aqui para você. " +
+                    "Espero conseguir colocar um sorriso no seu rosto, mesmo que seja pequenininho. ❤️";
+
+            }
+
+
+            if (tipo === "amor") {
+
+                titulo.innerHTML = "❤️ Uma carta para você";
+
+                texto.innerHTML =
+                    "Meu amor, eu fiz esse pequeno cantinho da internet " +
+                    "especialmente para você. " +
+                    "Quero guardar aqui nossas lembranças, nossas fotos, " +
+                    "nossas músicas e tudo aquilo que torna nossa história especial. " +
+                    "Eu te amo e escolheria você em todas as vidas. " +
+                    "Com amor, Lorenzo. ❤️";
+
+            }
+
+
+            modal.style.display = "flex";
+
+        }
+
+
+        function fecharCarta() {
+
+            document.getElementById("modal").style.display = "none";
+
+        }
+
+
+        window.onclick = function(event) {
+
+            const modal = document.getElementById("modal");
+
+            if (event.target === modal) {
+
+                fecharCarta();
+
+            }
 
         }
 
