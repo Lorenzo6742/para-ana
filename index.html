@@ -101,8 +101,15 @@
             box-shadow: 0 10px 25px rgba(0,0,0,0.10);
             transition: 0.3s;
             color: #5a2639;
+                position: relative;
+    overflow: hidden;
+    transform: translateY(0);
+            -webkit-tap-highlight-color: transparent;
         }
-
+.carta-botao:active {
+    transform: scale(0.96);
+    box-shadow: 0 5px 12px rgba(0,0,0,0.12);
+}
         .carta-botao:hover {
             transform: translateY(-8px);
             box-shadow: 0 15px 30px rgba(0,0,0,0.15);
