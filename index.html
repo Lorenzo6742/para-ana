@@ -252,26 +252,7 @@
     to {
         transform: translateY(-110vh) rotate(360deg);
         opacity: 0;
-    } /* MODO SURPRESA 🌙 */
-
-body.surpresa {
-    background: #12091f;
-    color: white;
-    transition: background 1s, color 1s;
-}
-
-body.surpresa .inicio {
-    background: linear-gradient(135deg, #12091f, #2b123d);
-}
-
-body.surpresa h1,
-body.surpresa .subtitulo {
-    color: white;
-}
-} </style>
-</head>
-
-
+   
 <body>
 
     <!-- TELA INICIAL -->
@@ -290,9 +271,6 @@ body.surpresa .subtitulo {
     Entrar 💌
 </button>
 
-<button class="botao" onclick="modoSurpresa()">
-    🌙 Uma surpresa para você
-</button>
 
     </section>
 
@@ -576,13 +554,7 @@ atualizarContador();
         coracao.remove();
     }, 7000);
 }
-function modoSurpresa() {
-    document.body.classList.add("surpresa");
 
-    setTimeout(() => {
-        alert("Ana, você é uma das coisas mais bonitas que já aconteceu na minha vida. ❤️");
-    }, 500);
-}
 setInterval(criarCoracao, 500); </script>
 <div id="coracoes"></div>
 </body>
